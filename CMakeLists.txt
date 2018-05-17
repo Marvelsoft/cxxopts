@@ -56,7 +56,7 @@ if(CXXOPTS_USE_UNICODE_HELP)
 endif()
 
 target_include_directories(cxxopts INTERFACE
-    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include/cxxopts>
     $<INSTALL_INTERFACE:include>
     )
 
@@ -88,7 +88,7 @@ install(EXPORT ${targets_export_name} DESTINATION ${CXXOPTS_CMAKE_DIR}
 
 # Install the header file and export the target
 install(TARGETS cxxopts EXPORT ${targets_export_name} DESTINATION lib)
-install(FILES ${PROJECT_SOURCE_DIR}/include/cxxopts.hpp DESTINATION include)
+install(FILES ${PROJECT_SOURCE_DIR}/include/cxxopts/cxxopts.hpp DESTINATION include)
 
 add_subdirectory(src)
 add_subdirectory(test)
