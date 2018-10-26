@@ -1,4 +1,7 @@
-project('cxxopts', 'cpp',default_options: ['cpp_std=c++14'])
+project('cxxopts',
+        'cpp',
+        version: run_command('cat', files('version.txt')).stdout().strip(),
+        default_options: ['cpp_std=c++14'])
 
 cxxopts_inc = include_directories('include')
 
